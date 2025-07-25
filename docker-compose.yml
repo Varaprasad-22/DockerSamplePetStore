@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend_petstore
+    ports:
+      - "5713:3000"
+    depends_on:
+      - backend
+      
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: backend_petstore
+    ports:
+      - "4000:4000"
+    environment:
+      - DB_URL=mongodb+srv://virupavaraprasad22:virupavaraprasad22@cluster0.mdtolec.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+  
+
+
+    

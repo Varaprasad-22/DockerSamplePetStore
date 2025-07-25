@@ -1,0 +1,12 @@
+GET http://localhost:4000/pets/
+
+###
+POST http://localhost:4000/pets/addItems
+Content-Type: application/json
+
+{
+  "name": "Bulldog",
+  "description": "Calm and courageous",
+  "price": 1500,
+  "image": "bulldog.jpg"
+}
